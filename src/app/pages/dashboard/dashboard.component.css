@@ -1,0 +1,45 @@
+.container {
+  max-width: 1000px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+h4 {
+  color: #17a2b8;
+}
+
+.badge {
+  color: rgb(58, 76, 41);
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 20px; /* Rounded badge for status */
+}
+
+.status-badge {
+  font-size: 0.9rem;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.cancel-btn {
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

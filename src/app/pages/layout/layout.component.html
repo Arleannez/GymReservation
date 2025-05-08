@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Navbar Brand (Gym Name or Logo) -->
+    <a class="navbar-brand" href="#">Big-Gals</a>
+
+    <!-- Navbar Links (Always visible, no collapsible button needed) -->
+    <div class="navbar-nav ms-auto">
+      <a class="nav-item nav-link" (click)="navigateTo('/home')" routerLinkActive="active">Home</a>
+      <a class="nav-item nav-link" (click)="navigateTo('/reservations')" routerLinkActive="active">Reservations</a>
+      <a class="nav-item nav-link" (click)="navigateTo('/about')" routerLinkActive="active">About</a>
+      <a class="nav-item nav-link" (click)="navigateTo('/dashboard')" routerLinkActive="active">Dashboard</a>
+    </div>
+
+    <!-- User Information & LogOff Button -->
+    <form class="d-flex align-items-center">
+      <span class="text-white me-3">{{loggedUser?.email}}</span>
+      <button class="btn btn-outline-light" type="button" (click)="onLogoff()">Log Off</button>
+    </form>
+  </div>
+</nav>
+
+<!-- Router Outlet -->
+<router-outlet></router-outlet> <!-- Ensure this is in your layout component -->

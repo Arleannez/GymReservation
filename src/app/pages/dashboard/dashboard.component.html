@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <!-- Gym Reservation Header -->
+  <div class="text-center mb-4">
+    <h2 class="text-primary">Gym Reservation Dashboard</h2>
+    <p class="lead">Book slots, view trends, and manage today's reservations.</p>
+  </div>
+
+  <!-- Reservation Stats -->
+  <div class="row mb-4 text-center">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Total Reservations</h5>
+        <h3 class="text-primary">12</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Available Slots</h5>
+        <h3 class="text-success">5</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Pending Approvals</h5>
+        <h3 class="text-warning">3</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Table -->
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h4 class="text-info text-center mb-4">Current Reservations</h4>
+      <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Slot</th>
+            <th>Status</th>
+            <th>Action</th> <!-- new column -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of reservations">
+            <td>{{ res.name }}</td>
+            <td>{{ res.slot }}</td>
+            <td>
+              <span
+                class="badge status-badge"
+                [ngClass]="{
+                  'bg-success': res.status === 'Approved',
+                  'bg-warning': res.status === 'Pending',
+                  'bg-danger': res.status === 'Cancelled'
+                }">
+                {{ res.status }}
+              </span>
+            </td>
+            <td>
+              <button 
+                *ngIf="res.status !== 'Cancelled'" 
+                class="btn btn-sm btn-danger cancel-btn"
+                (click)="cancelReservation(res)">
+                Cancel
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
