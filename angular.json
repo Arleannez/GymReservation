@@ -38,7 +38,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-              "baseHref": "/GymReservation/docs/"
+              "baseHref": "/GymReservation/"
           },
           "configurations": {
             "production": {

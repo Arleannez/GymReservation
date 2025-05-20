@@ -1,47 +1,54 @@
 .container {
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .lead {
-    font-size: 1.25rem;
-    color: #555;
-  }
-  
-  h3 {
-    color: #333;
-    font-size: 1.5rem;
-  }
-  
-  .btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .row {
-    margin-top: 30px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin: 5px 0;
-  }
-  
+  padding: 20px;
+  animation: fadeInUp 1s ease-out;
+}
 
-  /* Existing styles here... */
+h1 {
+  color: #333;
+  font-weight: bold;
+  animation: slideInDown 0.8s ease-out;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+  animation: fadeIn 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+h3 {
+  color: #333;
+  font-size: 1.5rem;
+  animation: slideInLeft 0.8s ease-out 0.3s;
+  animation-fill-mode: both;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  animation: bounceIn 0.9s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  animation: fadeIn 1s ease-out 0.8s;
+  animation-fill-mode: both;
+}
+
+ul li {
+  margin: 5px 0;
+}
 
 .gym-banner {
   width: 100%;
@@ -51,4 +58,73 @@
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 1s ease-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

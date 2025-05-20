@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   reservations: { name: string; slot: string; status: string }[] = [];
+  currentUser: string = '';
 
   ngOnInit(): void {
+    this.currentUser = localStorage.getItem('currentUser') || '';
     const storedReservations = localStorage.getItem('reservations');
     this.reservations = storedReservations ? JSON.parse(storedReservations) : [];
   }
