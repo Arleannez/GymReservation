@@ -264,3 +264,7 @@
   .schedule thead th, .schedule tbody td{ padding:12px 14px; font-size:.88rem; }
   .gallery img{ height:150px; }
 }
+.btn-submit{
+  margin: 4%;
+background-color: #218837b0;
+}

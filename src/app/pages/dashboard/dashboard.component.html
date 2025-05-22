@@ -8,8 +8,8 @@
   </div>
 
   <!-- Reservation Stats -->
-  <div class="row mb-4 text-center">
-    <div class="col-md-4">
+ <div class="row mb-4 text-center">
+     <!--<div class="col-md-4">
       <div class="card shadow-sm p-3">
         <h5>Total Reservations</h5>
         <h3 class="text-primary">12</h3>
@@ -20,14 +20,14 @@
         <h5>Available Slots</h5>
         <h3 class="text-success">5</h3>
       </div>
-    </div>
+    </div> 
     <div class="col-md-4">
       <div class="card shadow-sm p-3">
         <h5>Pending Approvals</h5>
         <h3 class="text-warning">3</h3>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <!-- Reservation Table -->
   <div class="row justify-content-center">
@@ -39,13 +39,15 @@
             <th>Name</th>
             <th>Slot</th>
             <th>Status</th>
-            <th>Action</th>
+          <!--  <th>Action</th>-->
             <!-- new column -->
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let res of reservations">
+              <!-- Interpolation: res.name - from the reservation object -->
             <td>{{ res.name }}</td>
+               <!-- Interpolation: res.slot - time slot selected -->
             <td>{{ res.slot }}</td>
             <td>
               <span
@@ -56,18 +58,19 @@
                   'bg-danger': res.status === 'Cancelled'
                 }"
               >
+              <!--Interpolation-->
                 {{ res.status }}
               </span>
             </td>
-            <td>
-              <button
+                 <!--    <td>
+     <button
                 *ngIf="res.status !== 'Cancelled' && res.name === currentUser"
                 class="btn btn-sm btn-danger cancel-btn"
                 (click)="cancelReservation(res)"
               >
                 Cancel
               </button>
-            </td>
+            </td>-->
           </tr>
         </tbody>
       </table>
