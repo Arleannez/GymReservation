@@ -1,35 +1,108 @@
+/* Container & Layout */
 .container {
   max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.dashboard-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .card-title {
   font-weight: 600;
+  color: #212529;
+  font-size: 1.2rem;
 }
 
-.table th, .table td {
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  background-color: #f9f9f9;
+}
+
+.table th {
+  background: #003f14;
+  color: #f2ff81;
+  font-weight: 600;
+  padding: 12px;
   text-align: center;
 }
 
-h4 {
-  color: #17a2b8;
+.table td {
+  background: #fff;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
 }
 
+.table tbody tr:hover td {
+  background-color: #f1f9ff;
+}
+
+/* Badges */
 .badge {
   color: rgb(58, 76, 41);
   font-size: 0.9rem;
   padding: 5px 10px;
-  border-radius: 20px; /* Rounded badge for status */
+  border-radius: 20px;
 }
 
 .status-badge {
   font-size: 0.9rem;
   padding: 5px 15px;
   border-radius: 20px;
+  display: inline-block;
+  text-transform: capitalize;
 }
 
+/* Status Colors */
+.status-badge.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Cancel Button */
 .cancel-btn {
   padding: 5px 12px;
   font-size: 0.85rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -37,9 +110,38 @@ h4 {
   background-color: #c82333;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .dashboard-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .table th, .table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

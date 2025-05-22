@@ -1,33 +1,39 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdminAuthService } from '../../services/admin-auth.service'; // ✅ Make sure path is correct
+import { AdminAuthService } from '../../services/admin-auth.service'; // ✅ Ensure correct path
+
+// ✅ Interface should be declared outside the @Component block
+export interface User {
+  email: string;
+  name?: string; // Optional
+}
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css'] // <-- Note: 'styleUrls' not 'styleUrl'
+  styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
-  loggedUser: any;
+  loggedUser: User | null = null; // Use the interface here
 
   constructor(
     private router: Router,
-    private adminAuthService: AdminAuthService // ✅ Inject the service
+    private adminAuthService: AdminAuthService
   ) {
     const localUser = localStorage.getItem('loggedUser');
-    if(localUser != null) {
+    if (localUser) {
       this.loggedUser = JSON.parse(localUser);
     }
   }
 
-  // Handle Navigation Programmatically
-  navigateTo(path: string) {
+  // Navigate to a route
+  navigateTo(path: string): void {
     this.router.navigate([path]);
   }
 
-  // Log Off the User
-  onLogoff() {
-    this.adminAuthService.logout(); // ✅ Call logout from service
+  //Log off
+  onLogoff(): void {
+    this.adminAuthService.logout();
     localStorage.removeItem('loggedUser');
     this.router.navigateByUrl('/login');
   }

@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <!-- Gym Reservation Header -->
   <div class="text-center mb-4">
-    <h2 class="text-primary">Gym Reservation Dashboard</h2>
+    <h2 class="text-primary">Gym Trainer Reservation Dashboard</h2>
     <p class="lead">
       Book slots, view trends, and manage today's reservations.
     </p>
@@ -39,7 +39,9 @@
             <th>Name</th>
             <th>Slot</th>
             <th>Status</th>
-          <!--  <th>Action</th>-->
+          <!--<th>Action</th>-->
+
+          
             <!-- new column -->
           </tr>
         </thead>
@@ -62,14 +64,11 @@
                 {{ res.status }}
               </span>
             </td>
-                 <!--    <td>
-     <button
+             <!--  <td>
+              <button
                 *ngIf="res.status !== 'Cancelled' && res.name === currentUser"
                 class="btn btn-sm btn-danger cancel-btn"
-                (click)="cancelReservation(res)"
-              >
-                Cancel
-              </button>
+                  (click)="cancelReservation(res)">Cancel</button>
             </td>-->
           </tr>
         </tbody>

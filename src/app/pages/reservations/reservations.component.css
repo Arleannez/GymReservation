@@ -72,7 +72,7 @@
   border:none;
   padding:14px 32px;
   font-size:1.125rem;
-  color:#fff;
+  color:#ceff0a;
   background-color: #2188375b;
   border-radius:30px;
   cursor:pointer;
@@ -171,6 +171,9 @@
 /* --------------------------------------------- */
 /* Gallery                                       */
 /* --------------------------------------------- */
+.gallery{
+  padding: 7%;
+}
 .gallery img{
   width:100%;
   height:220px;
@@ -184,7 +187,11 @@
   transform:scale(1.05);
   box-shadow:var(--shadow-sm);
 }
-
+/*Sa Row sa phones blabla*/
+.row{
+  padding-left: 5%;
+  padding-right: 5%;
+}
 /* --------------------------------------------- */
 /* Modal                                         */
 /* --------------------------------------------- */
@@ -224,6 +231,52 @@
   transition:color .25s ease;
 }
 .close-button:hover{ color:var(--primary); }
+
+.trainers {
+  padding-top: 40px;
+}
+
+.trainers h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.trainer-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.trainer-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.trainer-card h5 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.trainer-card p {
+  color: var(--text-light);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
 
 /* --------------------------------------------- */
 /* Keyframes                                     */
@@ -266,5 +319,6 @@
 }
 .btn-submit{
   margin: 4%;
-background-color: #218837b0;
+background-color: #0f7124f2;
 }
+

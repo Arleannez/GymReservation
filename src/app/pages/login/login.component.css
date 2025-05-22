@@ -7,15 +7,29 @@
     font-family: 'Montserrat', sans-serif;
 }
  
-
-.parent{
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+.parent {
+    background: linear-gradient(-45deg, #e2e2e2, #ddffa6, #c1ff24, #00ce00);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+}
+
+/* Keyframes for animated gradient */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container{
