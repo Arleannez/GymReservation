@@ -8,48 +8,40 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 // Define application routes
 const routes: Routes = [
   {
-    // Redirect the empty path to the login page
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full', // ensures exact match before redirect
+    pathMatch: 'full',
   },
   {
-    // Route for login page
+  path: 'admin',
+  component: AdminComponent
+},
+  {
     path: 'login',
     component: LoginComponent,
   },
   {
-    // Main layout route that wraps the inner app views
+    path: 'admin',
+    component: AdminComponent, // <-- this is the new route
+  },
+  {
     path: '',
-    component: LayoutComponent, // layout typically contains navbar/sidebar
+    component: LayoutComponent,
     children: [
-      {
-        // Home route under layout
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        // Route for reservations page
-        path: 'reservations',
-        component: ReservationsComponent,
-      },
-      {
-        // Route for about page
-        path: 'about',
-        component: AboutComponent,
-      },
-      {
-        // Route for admin dashboard
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
+      { path: 'home', component: HomeComponent },
+      { path: 'reservations', component: ReservationsComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'dashboard', component: DashboardComponent },
     ],
   },
 ];
+
 
 // Register the routes with the Angular router
 @NgModule({

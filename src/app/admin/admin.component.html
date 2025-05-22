@@ -1,0 +1,89 @@
+<div class="admin-container">
+  <nav class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li [class.active]="activeTab === 'dashboard'" (click)="switchTab('dashboard')">Dashboard</li>
+      <li [class.active]="activeTab === 'users'" (click)="switchTab('users')">User Management</li>
+      <li [class.active]="activeTab === 'reservations'" (click)="switchTab('reservations')">Reservations</li>
+      <li [class.active]="activeTab === 'settings'" (click)="switchTab('settings')">Gym Settings</li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <!-- Dashboard tab shows reservation stats + table -->
+    <section *ngIf="activeTab === 'dashboard'">
+      <h3>Welcome to the Admin Dashboard</h3>
+      <p>Use the sidebar to manage gym system features.</p>
+
+      <!-- Reservation Table -->
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h4 class="text-info text-center mb-4">Current Reservations</h4>
+          <table class="table table-bordered table-striped text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Slot</th>
+      <th>Status</th>
+      <th>Actions</th> <!-- New column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let res of reservations">
+      <td>{{ res.name }}</td>
+      <td>{{ res.slot }}</td>
+      <td>
+        <span
+          class="badge status-badge"
+          [ngClass]="{
+            'bg-success text-white': res.status === 'Approved',
+            'bg-warning text-dark': res.status === 'Pending',
+            'bg-danger text-white': res.status === 'Cancelled'
+          }"
+        >
+          {{ res.status }}
+        </span>
+      </td>
+      <td>
+        <button
+          *ngIf="res.status === 'Pending'"
+          class="btn btn-sm btn-success me-2"
+          (click)="approveReservation(res)"
+        >
+          Approve
+        </button>
+        <button
+          *ngIf="res.status !== 'Cancelled'"
+          class="btn btn-sm btn-danger"
+          (click)="cancelReservation(res)"
+        >
+          Cancel
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+      </div>
+    </section>
+
+  <!--  <section *ngIf="activeTab === 'users'">
+      <h3>User Management</h3>
+      <p>List of registered users and their roles.</p>
+      <--Add user table or logic here 
+    </section>
+
+    <section *ngIf="activeTab === 'reservations'">
+      <h3>Reservations</h3>
+      <p>Upcoming and past reservations.</p>
+      <--Add reservation table or logic here if needed 
+    </section>
+
+    <section *ngIf="activeTab === 'settings'">
+      <h3>Gym Settings</h3>
+      <p>Set hours, equipment, and admin tools.</p>
+      <-- Add form/settings inputs here 
+    </section> -->
+  </main>
+</div>

@@ -23,7 +23,7 @@ export class ReservationsComponent {
       const reservation = {
         name: this.userName,
         slot: this.selectedSlot,
-        status: 'Pending Reservation'
+        status: 'Pending'
       };
 
       // Get existing reservations or empty array

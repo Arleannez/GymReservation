@@ -1,0 +1,84 @@
+.admin-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #343a40;
+  color: white;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.25s ease;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #495057;
+  font-weight: 600;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f8faf9;
+  overflow-y: auto;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+}
+
+.status-badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.75em;
+  border-radius: 0.25rem;
+}
+
+.btn-danger {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+.bg-success {
+  background-color: #28a745 !important; /* green bg */
+  color: white !important;              /* white text */
+}
+
+.bg-warning {
+  background-color: #ffc107 !important; /* yellow bg */
+  color: #212529 !important;             /* dark text for readability */
+}
+
+.bg-danger {
+  background-color: #dc3545 !important; /* red bg */
+  color: white !important;               /* white text */
+}
+
+.badge{
+    color: #212529;
+}

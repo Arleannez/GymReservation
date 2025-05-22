@@ -1,32 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// Import your components here
 import { LoginComponent } from './pages/login/login.component';
-import { LayoutComponent } from './pages/layout/layout.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
-import { AboutComponent } from './pages/about/about.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LayoutComponent,
-    DashboardComponent,
     ReservationsComponent,
-    AboutComponent,
-    HomeComponent,
-    AdminLoginComponent
+    AdminComponent,
+    DashboardComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
