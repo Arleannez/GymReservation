@@ -27,13 +27,6 @@ export class DashboardComponent implements OnInit {
       : [];
   }
 
-/*
-  cancelReservation(reservation: Reservation): void {
-    if (confirm(`Cancel reservation for ${reservation.name}?`)) {
-      reservation.status = 'Cancelled';
-      this.updateLocalStorage();
-    }
-  }*/
 
   private updateLocalStorage(): void {
     localStorage.setItem('reservations', JSON.stringify(this.reservations));

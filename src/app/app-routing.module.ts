@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 // Import all the page components used in routing
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
@@ -13,23 +12,9 @@ import { AdminComponent } from './admin/admin.component';
 
 // Define application routes
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
-  path: 'admin',
-  component: AdminComponent
-},
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'admin',
-    component: AdminComponent, // <-- this is the new route
-  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent },
   {
     path: '',
     component: LayoutComponent,
@@ -41,6 +26,7 @@ const routes: Routes = [
     ],
   },
 ];
+
 
 
 // Register the routes with the Angular router
